@@ -3,7 +3,11 @@
 Welcome to the **Typing Experience Website** repository! This project is a fun and interactive typing website designed to make typing practice engaging and enjoyable. It includes multiple features like a minimalist typing experience, an animal sound typing game, and dynamic visual effects. Below is a detailed guide on what the project includes.
 
 ---
+##**Instructions**
 
+Open home.html and go through our virtual experience.
+
+---
 ## **Features**
 
 ### 1. **Minimalist Typing Experience**
