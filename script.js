@@ -257,3 +257,106 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.remove();
     });
 });
+// Minimalist Typing Experience Script
+const inputField = document.getElementById("textInput");
+const body = document.body;
+const popoutContainer = document.querySelector(".popoutlettrs");
+const heroText = document.getElementById("heroText");
+const tobeerased = document.getElementById("tobeerased");
+
+const colors = {
+  red: "#F28B82",
+  blue: "#AECBFA",
+  green: "#CCFF90",
+  yellow: "#FFF475",
+  gray: "#E0E0E0",
+  white: "#FFFFFF",
+  black: "#202124",
+  pink: "#FDCFE8",
+  purple: "#D7AEFB",
+  cyan: "#A7FFEB",
+};
+
+function findClosestColor(text) {
+  const words = text.toLowerCase().split(/\s+/);
+  for (let word of words) {
+    if (colors[word]) {
+      return colors[word];
+    }
+  }
+  return "black"; // Default background color
+}
+
+inputField.addEventListener("input", () => {
+  const enteredText = inputField.value.trim();
+  body.style.backgroundColor = findClosestColor(enteredText);
+  popout(enteredText);
+});
+
+function popout(text) {
+  const bubbleColors = [
+    "#FFADAD",
+    "#FFD6A5",
+    "#FDFFB6",
+    "#CAFFBF",
+    "#9BF6FF",
+    "#A0C4FF",
+    "#BDB2FF",
+  ];
+
+  text.split(" ").forEach((word, index) => {
+    word.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.style.position = "absolute";
+      span.style.left = `${Math.random() * 90}%`;
+      span.style.bottom = `${Math.random() * 50}vh`; /* Spread across lower half */
+      span.style.color = "#333";
+      span.style.backgroundColor =
+        bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
+      span.style.fontSize = "1.5rem";
+      span.style.fontWeight = "bold";
+      span.style.display = "flex";
+      span.style.alignItems = "center";
+      span.style.justifyContent = "center";
+      span.style.width = "40px";
+      span.style.height = "40px";
+      span.style.borderRadius = "8px";
+      span.style.opacity = "0";
+      span.style.transition =
+        "opacity 0.3s ease-in-out, transform 0.5s ease-in-out";
+
+      popoutContainer.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(-10px)";
+      }, index * 50);
+
+      setTimeout(() => {
+        span.style.opacity = "0";
+        setTimeout(() => {
+          span.remove();
+        }, 500);
+      }, 1000);
+    });
+  });
+}
+
+let charCount = 0;
+const sound = new Audio("cool-music.mp3");
+const sound2 = new Audio("pop-mf.mp3");
+
+inputField.addEventListener("input", () => {
+  const enteredText = inputField.value.trim();
+  heroText.innerHTML = enteredText || "Typing Experience"; // Default text if empty
+  tobeerased.innerHTML = "";
+
+  charCount++;
+  if (charCount % 15 === 0) {
+    sound.play();
+  }
+  if (charCount % 2 === 0) {
+    sound2.play();
+  }
+});

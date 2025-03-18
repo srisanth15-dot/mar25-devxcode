@@ -499,4 +499,85 @@ body {
 @keyframes typeWriter {
   from { width: 0 }
   to { width: 100% }
-}  
+}  /* Minimalist Typing Experience Styles */
+.minimalist-typing {
+  font-family: "Helvetica", sans-serif;
+  background-color: black;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.fixed-text input {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  height: 60px;
+  width: 400px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 18px;
+  outline: none;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-text input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.bgcolortext {
+  color: whitesmoke;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 20px;
+  font-weight: 300;
+  flex-direction: column;
+}
+
+.popoutlettrs {
+  position: absolute;
+  width: 100%;
+  height: 50vh; /* Lower half of the screen */
+  bottom: 0;
+  left: 0;
+}
+
+#heroText {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
