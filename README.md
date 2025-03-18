@@ -3,7 +3,7 @@
 Welcome to the **Typing Experience Website** repository! This project is a fun and interactive typing website designed to make typing practice engaging and enjoyable. It includes multiple features like a minimalist typing experience, an animal sound typing game, and dynamic visual effects. Below is a detailed guide on what the project includes.
 
 ---
-##**Instructions**
+**Instructions**
 
 Open home.html and go through our virtual experience.
 
@@ -39,11 +39,5 @@ Open home.html and go through our virtual experience.
 ## **Credits**
 - **Sound Effects**: [FreeAnimalSounds.org](https://freeanimalsounds.org) for animal sounds.
 - **Fonts**: [Google Fonts](https://fonts.google.com) for the `Inter` and `Montserrat` fonts.
-- **Inspiration**: Inspired by typing games like TypeRacer and Monkeytype.
-
----
-
-## **License**
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it as you see fit.
 
 ---
